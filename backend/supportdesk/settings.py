@@ -13,6 +13,7 @@ def env(name, default=""):
 SECRET_KEY = env("SECRET_KEY", "change-me")
 DEBUG = env("DEBUG", "0") == "1"
 ALLOWED_HOSTS = [h.strip() for h in env("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",") if h.strip()]
+AI_ASYNC = os.getenv("AI_ASYNC", "1") == "1"
 
 INSTALLED_APPS = [
     "django.contrib.admin",

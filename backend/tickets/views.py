@@ -8,7 +8,8 @@ from .models import Ticket, Comment
 from .serializers import TicketSerializer, CommentSerializer
 from .permissions import IsStaffOrOwner
 from ai_engine.tasks import process_ticket_ai
-
+from django.conf import settings
+from .tasks import process_ticket_ai 
 class TicketViewSet(viewsets.ModelViewSet):
     serializer_class = TicketSerializer
     permission_classes = [IsStaffOrOwner]
@@ -21,7 +22,14 @@ class TicketViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         ticket = serializer.save(created_by=self.request.user)
-        process_ticket_ai.delay(ticket.id)
+        if getattr(settings, "AI_ASYNC", True):
+            process_ticket_ai.delay(ticket.id)   # local async
+        else:
+            # production sync (no worker needed)
+            try:
+                process_ticket_ai(ticket.id)     # run immediately in same request
+            except Exception:
+                pass
 
     def perform_update(self, serializer):
         ticket = serializer.save()
