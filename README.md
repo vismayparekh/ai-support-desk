@@ -6,7 +6,7 @@ A full-stack portfolio project that lets users create support tickets, then **AI
 
 ## 🌐 Live Demo
 
-- **Frontend (Web App):** https://willowy-kashata-c8781a.netlify.app  
+- **Frontend (Web App):**https://ai-supportdesk-app.netlify.app/
 - **Backend (API Base):** https://ai-support-desk.onrender.com  
 - **API Docs (Swagger):** https://ai-support-desk.onrender.com/api/docs/
 
