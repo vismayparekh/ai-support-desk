@@ -6,7 +6,7 @@ A full-stack portfolio project that lets users create support tickets, then **AI
 
 ## 🌐 Live Demo
 
-- **Frontend (Web App):**https://ai-supportdesk-app.netlify.app/
+- **Frontend (Web App):** https://ai-supportdesk-app.netlify.app/
 - **Backend (API Base):** https://ai-support-desk.onrender.com  
 - **API Docs (Swagger):** https://ai-support-desk.onrender.com/api/docs/
 
@@ -196,12 +196,12 @@ AI:
 **Frontend:** Netlify (React build)
 
 ### Production URLs
-- Frontend: https://willowy-kashata-c8781a.netlify.app  
+- Frontend: https://ai-supportdesk-app.netlify.app/  
 - Backend: https://ai-support-desk.onrender.com  
 
 > Make sure Render has:
-- `CORS_ALLOWED_ORIGINS=https://willowy-kashata-c8781a.netlify.app`
-- `CSRF_TRUSTED_ORIGINS=https://willowy-kashata-c8781a.netlify.app`
+- `CORS_ALLOWED_ORIGINS=https://ai-supportdesk-app.netlify.app/
+- `CSRF_TRUSTED_ORIGINS=https://ai-supportdesk-app.netlify.app/
 
 ---
 
